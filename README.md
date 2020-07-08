@@ -8,6 +8,10 @@ The purpose of this repository is to demonstrate how to add a backend in HAProxy
 
 Run `docker-compose up --build` and will spin up 3 containers.
 
+Note: If you get this error `haproxy|level=fatal msg="Error initiating users: no users configured in /etc/haproxy/haproxy.cfg, error: section missing"` This issue will usually arise in windows. 
+
+Solution: File needs to be saved in unix style: `Select end of line sequence as LF(\n) instead of CRLF(\r)`
+
 ## Usage
 
 We've setup `haproxy.cfg` in such a way that `localhost` will point to `haproxy` and it will execute the routing logic to route the request.
